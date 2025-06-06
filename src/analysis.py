@@ -1,6 +1,6 @@
-﻿"""
-applying Baxter–King filter to FRED data
-"""
+# applying Baxter–King filter to FRED data
+
+
 # libs:
 from datetime import datetime
 import pathlib
