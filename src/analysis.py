@@ -27,10 +27,16 @@ df_q["UNRATE"] = df["UNRATE"].resample("Q").mean()
 # ────────────────────────────────
 #  2. Baxter–King filter (6–32 qtrs)
 # ────────────────────────────────
-gdp_cycle = bkfilter(df_q["GDP"],    low=6, high=32, K=12)
-unr_cycle = bkfilter(df_q["UNRATE"], low=6, high=32, K=12)
-cycle_df  = pd.DataFrame({"GDP_cycle": gdp_cycle, "UNRATE_cycle": unr_cycle})
 
+df_qtr = pd.DataFrame({
+    "GDP":    df["GDP"].resample("Q").last(),   
+    "UNRATE": df["UNRATE"].resample("Q").mean()  #average out
+}).dropna() 
+
+gdp_cycle = bkfilter(df_qtr["GDP"],    low=6, high=32, K=12)  
+unr_cycle = bkfilter(df_qtr["UNRATE"], low=6, high=32, K=12)  
+cycle_df  = pd.DataFrame({"GDP_cycle": gdp_cycle,
+                          "UNRATE_cycle": unr_cycle})
 # ────────────────────────────────
 #  3. Plot
 # ────────────────────────────────
