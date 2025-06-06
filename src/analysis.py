@@ -1,6 +1,5 @@
 """
-Baxter King (BK) filter demo on FRED data
-Creates figures/bk_gdp_unrate.png with clearly visible lines
+Baxter King (BK) filter on FRED data -> learn push pull
 """
 
 from datetime import datetime
