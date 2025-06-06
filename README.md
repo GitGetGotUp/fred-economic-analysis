@@ -4,6 +4,8 @@
 # FRED Economic Analysis
 download GDP & Unemployment Rate from FRED, plot levels and Baxter–King cycles.
 
+output:
+
 ![Business-cycle plot](figures/bk_gdp_unrate.png)
 
 ## Quick start
