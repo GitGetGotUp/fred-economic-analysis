@@ -1,0 +1,6 @@
+﻿pycache/
+*.py[cod]
+venv/
+.ipynb_checkpoints/
+data/
+output.png
