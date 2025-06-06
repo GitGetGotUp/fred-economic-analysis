@@ -10,6 +10,15 @@ import matplotlib.pyplot as plt
 from pandas_datareader import data as web
 from statsmodels.tsa.filters.bk_filter import bkfilter
 
+from fredapi import Fred
+fred = Fred(api_key="3f8e92e5cfc9b253a12a0fd0610576ef")
+import pandas as pd
+df = pd.DataFrame({
+    "GDP": fred.get_series("GDP", observation_start="2000-01-01"),
+    "UNRATE": fred.get_series("UNRATE", observation_start="2000-01-01")
+})
+
+
 # ---------------------------------------------------------------------
 SERIES = ["GDP", "UNRATE"]
 START = "2000-01-01"
